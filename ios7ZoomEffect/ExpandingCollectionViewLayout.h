@@ -13,4 +13,11 @@
 - (void)expandCellAtIndexPath:(NSIndexPath *)indexPath;
 - (void)collapseExpandedCell;
 
+/**
+ * Set this property to yes to have views maintain their width:height ratio when being scaled
+ *
+ * NO by default
+ */
+@property(nonatomic, assign) BOOL tightScale;
+
 @end

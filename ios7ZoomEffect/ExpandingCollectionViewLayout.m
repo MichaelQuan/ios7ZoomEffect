@@ -23,6 +23,7 @@
     if (self) {
         _selectedCellFrame = CGRectNull;
         _selectedIndexPath = nil;
+        _tightScale = NO;
     }
     return self;
 }
@@ -69,6 +70,11 @@
             CGFloat x_scale = collectionViewBounds.size.width / selectedFrame.size.width;
             CGFloat y_scale = collectionViewBounds.size.height / selectedFrame.size.height;
             CGAffineTransform scaleTransform = CGAffineTransformMakeScale(x_scale, y_scale);
+            if (self.tightScale)
+            {
+                CGFloat minScale = MIN(x_scale, y_scale);
+                scaleTransform = CGAffineTransformMakeScale(minScale, minScale);
+            }
             
             // Translation based on how much the selected cell has been scaled
             // translate based on the (scale - 1) and delta between the centers

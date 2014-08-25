@@ -35,6 +35,7 @@ static NSString * const CellIdentifier = @"cell";
     self.expandingLayout.minimumLineSpacing = 5;
     self.expandingLayout.minimumInteritemSpacing = 5;
     self.expandingLayout.itemSize = CGSizeMake(50, 50);
+    self.expandingLayout.tightScale = YES;
     
     [self.view addSubview:self.collectionView];
     NSDictionary *viewDictionary = @{@"cv" : self.collectionView};
