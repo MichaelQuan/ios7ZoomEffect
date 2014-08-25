@@ -10,7 +10,7 @@
 
 @interface ExpandingCollectionViewLayout : UICollectionViewFlowLayout
 
-- (void)expandCellAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0);
-- (void)collapseExpandedCell NS_AVAILABLE_IOS(7_0);
+- (void)expandCellAtIndexPath:(NSIndexPath *)indexPath;
+- (void)collapseExpandedCell;
 
 @end
