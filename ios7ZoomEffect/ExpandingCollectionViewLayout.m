@@ -96,23 +96,30 @@
 {
     self.selectedCellFrame = [self layoutAttributesForItemAtIndexPath:indexPath].frame;
     self.selectedIndexPath = indexPath;
-    //TODO: wrap this in a spring animation to stop the linear animations
-    [self.collectionView performBatchUpdates:^{
-        
+
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:1 initialSpringVelocity:9 options:0 animations:^{
+        [self.collectionView performBatchUpdates:^{
+            
+        } completion:^(BOOL finished) {
+            //TODO: add callback for finished animating
+        }];
     } completion:^(BOOL finished) {
-        //TODO: add callback for finished animating
     }];
+
 }
 
 - (void)collapseExpandedCell
 {
     self.selectedCellFrame = CGRectNull;
     self.selectedIndexPath = nil;
-    //TODO: wrap this in a spring animation to stop the linear animations
-    [self.collectionView performBatchUpdates:^{
-        
+
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:1 initialSpringVelocity:9 options:0 animations:^{
+        [self.collectionView performBatchUpdates:^{
+            
+        } completion:^(BOOL finished) {
+            //TODO: add callback for finished animating
+        }];
     } completion:^(BOOL finished) {
-        //TODO: add callback for finished animating
     }];
 }
 
