@@ -83,10 +83,10 @@
             CGAffineTransform offsetTranslate = CGAffineTransformMakeTranslation(x_offsetTranslate, y_offsetTranslate);
             
             // multiply translations first
-            CGAffineTransform transoform = CGAffineTransformConcat(zoomTranslate, offsetTranslate);
-            transoform = CGAffineTransformConcat(scaleTransform, transoform);
+            CGAffineTransform transform = CGAffineTransformConcat(zoomTranslate, offsetTranslate);
+            transform = CGAffineTransformConcat(scaleTransform, transform);
             
-            layoutAttributes.transform = transoform;
+            layoutAttributes.transform = transform;
         }
         
     }
