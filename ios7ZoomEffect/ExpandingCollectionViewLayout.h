@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExpandingCollectionViewLayout : UICollectionViewLayout
+@interface ExpandingCollectionViewLayout : UICollectionViewFlowLayout
+
+- (void)expandCellAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0);
+- (void)collapseExpandedCell NS_AVAILABLE_IOS(7_0);
 
 @end

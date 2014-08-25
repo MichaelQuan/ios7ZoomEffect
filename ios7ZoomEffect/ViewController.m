@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "ExpandingCollectionViewLayout.h"
 
 @interface ViewController ()
+
+@property UICollectionView *collectionView;
 
 @end
 
@@ -17,13 +20,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+	self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[ExpandingCollectionViewLayout new]];
 }
 
-- (void)didReceiveMemoryWarning
+
+#pragma mark - UICollectionViewDatasource
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return nil;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 0;
 }
 
 @end

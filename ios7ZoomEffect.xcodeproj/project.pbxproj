@@ -22,6 +22,7 @@
 		ECC1D4EB18C6D3EA0092925E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC1D4CA18C6D3E90092925E /* UIKit.framework */; };
 		ECC1D4F318C6D3EA0092925E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECC1D4F118C6D3EA0092925E /* InfoPlist.strings */; };
 		ECC1D4F518C6D3EA0092925E /* ios7ZoomEffectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1D4F418C6D3EA0092925E /* ios7ZoomEffectTests.m */; };
+		ECDE8FB118C6D52A00B01E0A /* ExpandingCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDE8FB018C6D52A00B01E0A /* ExpandingCollectionViewLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		ECC1D4F018C6D3EA0092925E /* ios7ZoomEffectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios7ZoomEffectTests-Info.plist"; sourceTree = "<group>"; };
 		ECC1D4F218C6D3EA0092925E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ECC1D4F418C6D3EA0092925E /* ios7ZoomEffectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios7ZoomEffectTests.m; sourceTree = "<group>"; };
+		ECDE8FAF18C6D52A00B01E0A /* ExpandingCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandingCollectionViewLayout.h; sourceTree = "<group>"; };
+		ECDE8FB018C6D52A00B01E0A /* ExpandingCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingCollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				ECC1D4DB18C6D3E90092925E /* Main_iPad.storyboard */,
 				ECC1D4DE18C6D3E90092925E /* ViewController.h */,
 				ECC1D4DF18C6D3E90092925E /* ViewController.m */,
+				ECDE8FAF18C6D52A00B01E0A /* ExpandingCollectionViewLayout.h */,
+				ECDE8FB018C6D52A00B01E0A /* ExpandingCollectionViewLayout.m */,
 				ECC1D4E118C6D3E90092925E /* Images.xcassets */,
 				ECC1D4CD18C6D3E90092925E /* Supporting Files */,
 			);
@@ -254,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC1D4E018C6D3E90092925E /* ViewController.m in Sources */,
+				ECDE8FB118C6D52A00B01E0A /* ExpandingCollectionViewLayout.m in Sources */,
 				ECC1D4D718C6D3E90092925E /* AppDelegate.m in Sources */,
 				ECC1D4D318C6D3E90092925E /* main.m in Sources */,
 			);
@@ -474,6 +480,7 @@
 				ECC1D4FA18C6D3EA0092925E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECC1D4FB18C6D3EA0092925E /* Build configuration list for PBXNativeTarget "ios7ZoomEffectTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +489,7 @@
 				ECC1D4FD18C6D3EA0092925E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
