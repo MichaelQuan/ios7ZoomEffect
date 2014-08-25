@@ -31,9 +31,9 @@
 {
     NSArray *layoutAttributes = [super layoutAttributesForElementsInRect:rect];
     
-//    [layoutAttributes enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes *obj, NSUInteger idx, BOOL *stop) {
-//        [self _transformLayoutAttributes:obj];
-//    }];
+    [layoutAttributes enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes *obj, NSUInteger idx, BOOL *stop) {
+        [self _transformLayoutAttributes:obj];
+    }];
     
     return layoutAttributes;
 }
@@ -41,7 +41,7 @@
 {
     UICollectionViewLayoutAttributes *layoutAttributes = [super layoutAttributesForItemAtIndexPath:indexPath];
     
-//    [self _transformLayoutAttributes:layoutAttributes];
+    [self _transformLayoutAttributes:layoutAttributes];
     
     return layoutAttributes;
 }
@@ -84,7 +84,7 @@
             
             // multiply translations first
             CGAffineTransform transoform = CGAffineTransformConcat(zoomTranslate, offsetTranslate);
-            transoform = CGAffineTransformConcat(transoform, scaleTransform);
+            transoform = CGAffineTransformConcat(scaleTransform, transoform);
             
             layoutAttributes.transform = transoform;
         }

@@ -11,9 +11,12 @@
 
 @interface ViewController ()
 
-@property UICollectionView *collectionView;
+@property(nonatomic, strong) UICollectionView *collectionView;
+@property(nonatomic, strong) ExpandingCollectionViewLayout *expandingLayout;
 
 @end
+
+static NSString * const CellIdentifier = @"cell";
 
 @implementation ViewController
 
@@ -21,20 +24,48 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-	self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[ExpandingCollectionViewLayout new]];
+    self.expandingLayout = [ExpandingCollectionViewLayout new];
+	self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.expandingLayout];
+    self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
+    self.collectionView.allowsMultipleSelection = YES;
+    
+    self.expandingLayout.minimumLineSpacing = 5;
+    self.expandingLayout.minimumInteritemSpacing = 5;
+    self.expandingLayout.itemSize = CGSizeMake(50, 50);
+    
+    [self.view addSubview:self.collectionView];
+    NSDictionary *viewDictionary = @{@"cv" : self.collectionView};
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[cv]|" options:0 metrics:nil views:viewDictionary]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[cv]|" options:0 metrics:nil views:viewDictionary]];
 }
 
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.expandingLayout expandCellAtIndexPath:indexPath];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.expandingLayout collapseExpandedCell];
+}
 
 #pragma mark - UICollectionViewDatasource
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blueColor];
+    return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return 50;
 }
 
 @end
