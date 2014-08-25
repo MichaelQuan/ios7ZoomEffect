@@ -92,11 +92,7 @@
             CGAffineTransform transform = CGAffineTransformConcat(zoomTranslate, offsetTranslate);
             transform = CGAffineTransformConcat(scaleTransform, transform);
             
-            if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-                layoutAttributes.frame = CGRectApplyAffineTransform(layoutAttributes.frame, transform);
-            } else {
-                layoutAttributes.transform = transform;
-            }
+            layoutAttributes.transform = transform;
         }
         
     }

@@ -10,8 +10,8 @@
 
 @interface ExpandingCollectionViewLayout : UICollectionViewFlowLayout
 
-- (void)expandCellAtIndexPath:(NSIndexPath *)indexPath;
-- (void)collapseExpandedCell;
+- (void)expandCellAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0);
+- (void)collapseExpandedCell NS_AVAILABLE_IOS(7_0);
 
 /**
  * Set this property to yes to have views maintain their width:height ratio when being scaled
