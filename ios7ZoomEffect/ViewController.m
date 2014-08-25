@@ -23,9 +23,9 @@ static NSString * const CellIdentifier = @"cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     self.expandingLayout = [ExpandingCollectionViewLayout new];
 	self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.expandingLayout];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -39,7 +39,7 @@ static NSString * const CellIdentifier = @"cell";
     [self.view addSubview:self.collectionView];
     NSDictionary *viewDictionary = @{@"cv" : self.collectionView};
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[cv]|" options:0 metrics:nil views:viewDictionary]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[cv]|" options:0 metrics:nil views:viewDictionary]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[cv]|" options:0 metrics:nil views:viewDictionary]];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
